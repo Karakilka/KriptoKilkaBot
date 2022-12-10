@@ -24,19 +24,23 @@ public class TelegramBot extends TelegramLongPollingBot {
     final Botconfig config;
 static final String HELP_TEXT = "/start - начать\n" +
         "/help - что умеет бот\n" +
-        "/USD - курс доллара\n" +
-        "/BTC - курс битка ₿\n" +
-        "/ETH - курс эфириума\n" +
-        "/USDT - курс виртуального доллара";
+        "/kurs - конвертер\n" +
+        "/usd - курс доллара\n" +
+        "/eur - курс евро\n" +
+        "/btc - курс битка ₿\n" +
+        "/eth - курс эфириума\n" +
+        "/usdt - курс виртуального доллара";
     public TelegramBot(Botconfig config) {
         this.config = config;
         List<BotCommand> listofCommands = new ArrayList<>();
         listofCommands.add(new BotCommand("/start", "начать"));
         listofCommands.add(new BotCommand("/help", "что умеет бот"));
-        listofCommands.add(new BotCommand("/USD", "курс доллара"));
-        listofCommands.add(new BotCommand("/BTC", "курс битка ₿"));
-        listofCommands.add(new BotCommand("/ETH", "курс эфириума"));
-        listofCommands.add(new BotCommand("/USDT", "курс виртуального доллара"));
+        listofCommands.add(new BotCommand("/kurs", "конвертер"));
+        listofCommands.add(new BotCommand("/usd", "курс доллара"));
+        listofCommands.add(new BotCommand("/eur", "курс евро"));
+        listofCommands.add(new BotCommand("/btc", "курс битка ₿"));
+        listofCommands.add(new BotCommand("/eth", "курс эфириума"));
+        listofCommands.add(new BotCommand("/usdt", "курс виртуального доллара"));
 
         try {
             this.execute(new SetMyCommands(listofCommands, new BotCommandScopeDefault(),null));
@@ -80,6 +84,23 @@ static final String HELP_TEXT = "/start - начать\n" +
                         throw new RuntimeException(e);
                     }
                     break;
+
+
+                case "/USD":
+                    try {
+                        sendMessage(chatId, HELP_TEXT);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+
+
+
+
+
+
+
+
                 default:
 
                     try {
