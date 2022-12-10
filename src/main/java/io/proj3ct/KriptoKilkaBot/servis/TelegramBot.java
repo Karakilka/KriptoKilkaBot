@@ -1,21 +1,50 @@
 package io.proj3ct.KriptoKilkaBot.servis;
 
 import io.proj3ct.KriptoKilkaBot.config.Botconfig;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
+import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Slf4j
 
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
 
-   final Botconfig config;
+    final Botconfig config;
+static final String HELP_TEXT = "/start - начать\n" +
+        "/help - что умеет бот\n" +
+        "/USD - курс доллара\n" +
+        "/BTC - курс битка ₿\n" +
+        "/ETH - курс эфириума\n" +
+        "/USDT - курс виртуального доллара";
+    public TelegramBot(Botconfig config) {
+        this.config = config;
+        List<BotCommand> listofCommands = new ArrayList<>();
+        listofCommands.add(new BotCommand("/start", "начать"));
+        listofCommands.add(new BotCommand("/help", "что умеет бот"));
+        listofCommands.add(new BotCommand("/USD", "курс доллара"));
+        listofCommands.add(new BotCommand("/BTC", "курс битка ₿"));
+        listofCommands.add(new BotCommand("/ETH", "курс эфириума"));
+        listofCommands.add(new BotCommand("/USDT", "курс виртуального доллара"));
 
-   public TelegramBot(Botconfig config) {
-       this.config = config;
-   }
+        try {
+            this.execute(new SetMyCommands(listofCommands, new BotCommandScopeDefault(),null));
+        } catch (TelegramApiException e) {
+            log.error("Ошибка: " + e.getMessage());
+        }
+    }
+
 
     @Override
     public String getBotUsername() {
@@ -43,10 +72,18 @@ public class TelegramBot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                     break;
+
+                case "/help":
+                    try {
+                        sendMessage(chatId, HELP_TEXT);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
                 default:
 
                     try {
-                        sendMessage(chatId, "Прости, эта команда не поддерживается:((((" );
+                        sendMessage(chatId, "Прости, эта команда не поддерживается:((((");
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -59,22 +96,23 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void startCommandReceived(long chatId, String name) throws TelegramApiException {
 
-        String answer = "Привет, " + name + ", чем я могу помочь?";
-
+        String answer = "Привет, " + name + ", чем я могу помочь?\n" + "нажмите /help чтобы узнать команды";
+        log.info("Replied to user" + name);
         sendMessage(chatId, answer);
 
     }
+
     private void sendMessage(long chatId, String textToSend) throws TelegramApiException {
 
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
         message.setText(textToSend);
 
-        try{
+        try {
             execute(message);
+        } catch (TelegramApiException e) {
+            log.error("Error occurred" + e.getMessage());
         }
-        catch (TelegramApiException e){
+    }
 
-        }
-   }
 }
