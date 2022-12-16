@@ -1,7 +1,16 @@
 package io.proj3ct.KriptoKilkaBot.servis;
 
 import io.proj3ct.KriptoKilkaBot.config.Botconfig;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
@@ -12,7 +21,9 @@ import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScope
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.jsoup.nodes.Document;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +31,7 @@ import java.util.List;
 
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
+
 
     final Botconfig config;
 static final String HELP_TEXT = "/start - начать\n" +
@@ -30,6 +42,17 @@ static final String HELP_TEXT = "/start - начать\n" +
         "/btc - курс битка ₿\n" +
         "/eth - курс эфириума\n" +
         "/usdt - курс виртуального доллара";
+    static final String wwww = "мне надо чтоб прога запускалась0";
+    static final String ww = "мне надо чтоб прога запускалась1";
+    static final String wwq = "мне надо чтоб прога запускалась2";
+    static final String wwe = "мне надо чтоб прога запускалась3";
+    static final String wwr = "мне надо чтоб прога запускалась4";
+    static final String ebat_pomogite ="Курс какой валюты ты бы хотел узнать?))))\n" +
+            "/usd - курс доллара\n" +
+            "/eur - курс евро\n" +
+            "/btc - курс битка ₿\n" +
+            "/eth - курс эфириума\n" +
+            "/usdt - курс виртуального доллара";
     public TelegramBot(Botconfig config) {
         this.config = config;
         List<BotCommand> listofCommands = new ArrayList<>();
@@ -86,18 +109,54 @@ static final String HELP_TEXT = "/start - начать\n" +
                     break;
 
 
-                case "/USD":
+                case "/kurs":
                     try {
-                        sendMessage(chatId, HELP_TEXT);
+                        sendMessage(chatId,ebat_pomogite);
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                     break;
 
+                case "/usd":
+                    try {
+                        sendMessage(chatId,wwww);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
 
+                    break;
 
+                case "/eur":
+                    try {
+                        sendMessage(chatId,ww);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
 
+                case "/btc":
+                    try {
+                        sendMessage(chatId, wwq );
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
 
+                case "/eth":
+                    try {
+                        sendMessage(chatId, wwe );
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+
+                case "/usdt":
+                    try {
+                        sendMessage(chatId, wwr);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
 
 
 
@@ -114,12 +173,13 @@ static final String HELP_TEXT = "/start - начать\n" +
 
 
     }
-
+List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
     private void startCommandReceived(long chatId, String name) throws TelegramApiException {
 
         String answer = "Привет, " + name + ", чем я могу помочь?\n" + "нажмите /help чтобы узнать команды";
         log.info("Replied to user" + name);
         sendMessage(chatId, answer);
+
 
     }
 
