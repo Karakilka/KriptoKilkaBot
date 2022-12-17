@@ -18,7 +18,7 @@
 #     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (os_windows.cpp:3753), pid=7912, tid=3724
+#  Out of Memory Error (os_windows.cpp:3753), pid=2288, tid=8756
 #
 # JRE version:  (17.0.4.1+7) (build )
 # Java VM: OpenJDK 64-Bit Server VM (17.0.4.1+7-b469.62, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
@@ -30,13 +30,13 @@
 Command Line: git4idea.http.GitAskPassApp Username for 'https://github.com': 
 
 Host: Intel(R) Pentium(R) CPU 3825U @ 1.90GHz, 4 cores, 7G,  Windows 7 , 64 bit Build 7601 (6.1.7601.24565)
-Time: Sat Dec 17 01:10:24 2022 Романское время (зима) elapsed time: 0.017329 seconds (0d 0h 0m 0s)
+Time: Sat Dec 17 01:11:08 2022 Романское время (зима) elapsed time: 0.016889 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x0000000000492400):  JavaThread "Unknown thread" [_thread_in_vm, id=3724, stack(0x00000000021c0000,0x00000000022c0000)]
+Current thread (0x00000000002b2400):  JavaThread "Unknown thread" [_thread_in_vm, id=8756, stack(0x00000000020f0000,0x00000000021f0000)]
 
-Stack: [0x00000000021c0000,0x00000000022c0000]
+Stack: [0x00000000020f0000,0x00000000021f0000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x68356a]
 V  [jvm.dll+0x83fab4]
@@ -71,16 +71,16 @@ _java_thread_list=0x000007feee0a7f58, length=0, elements={
 Java Threads: ( => current thread )
 
 Other Threads:
-  0x00000000004f5d90 GCTaskThread "GC Thread#0" [stack: 0x000000001a3d0000,0x000000001a4d0000] [id=9056]
-  0x000000001a1f7f80 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000001a590000,0x000000001a690000] [id=4348]
-  0x000000001a1f91b0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000001a870000,0x000000001a970000] [id=3776]
+  0x0000000000315d90 GCTaskThread "GC Thread#0" [stack: 0x000000001a2b0000,0x000000001a3b0000] [id=3076]
+  0x000000001a3b7f80 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000001a690000,0x000000001a790000] [id=9616]
+  0x000000001a3b91b0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000001a550000,0x000000001a650000] [id=3020]
 
 [error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007feed860217]
 
 VM state: not at safepoint (not fully initialized)
 
 VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
-[0x000000000048cae0] Heap_lock - owner thread: 0x0000000000492400
+[0x00000000002acae0] Heap_lock - owner thread: 0x00000000002b2400
 
 Heap address: 0x0000000081200000, size: 2030 MB, Compressed Oops mode: 32-bit
 
@@ -119,7 +119,7 @@ Event: 0.010 Loaded shared library C:\Program Files\JetBrains\IntelliJ IDEA Comm
 
 
 Dynamic libraries:
-0x000000013ff70000 - 0x000000013ff7a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.exe
+0x000000013fbb0000 - 0x000000013fbba000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.exe
 0x0000000077880000 - 0x0000000077a1f000 	C:\Windows\SYSTEM32\ntdll.dll
 0x0000000077760000 - 0x0000000077880000 	C:\Windows\system32\kernel32.dll
 0x000007fefd660000 - 0x000007fefd6c7000 	C:\Windows\system32\KERNELBASE.dll
@@ -224,12 +224,12 @@ TEMP=C:\Users\User\AppData\Local\Temp
 
 OS:
  Windows 7 , 64 bit Build 7601 (6.1.7601.24565)
-OS uptime: 0 days 0:50 hours
+OS uptime: 0 days 0:51 hours
 
 CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, erms, clmul, clflush
 
-Memory: 4k page, system-wide physical 8112M (529M free)
-TotalPageFile size 10158M (AvailPageFile size 73M)
+Memory: 4k page, system-wide physical 8112M (621M free)
+TotalPageFile size 10158M (AvailPageFile size 85M)
 current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
 current process commit charge ("private bytes"): 58M, peak: 185M
 

@@ -42,11 +42,11 @@ static final String HELP_TEXT = "/start - начать\n" +
         "/btc - курс битка ₿\n" +
         "/eth - курс эфириума\n" +
         "/usdt - курс виртуального доллара";
-    static final String wwww = "мне надо чтоб прога запускалась0";
-    static final String ww = "мне надо чтоб прога запускалась1";
-    static final String wwq = "мне надо чтоб прога запускалась2";
-    static final String wwe = "мне надо чтоб прога запускалась3";
-    static final String wwr = "мне надо чтоб прога запускалась4";
+    static final String wwww = "доллар = 64,61 рублей";
+    static final String ww = "евро = 68,78 рублей";
+    static final String wwq = "биткоин = 1 082 558,98 рублей";
+    static final String wwe = "эфириум = 76 386,41 рублей";
+    static final String wwr = "виртуальный доллар = 64,61 рублей";
     static final String ebat_pomogite ="Курс какой валюты ты бы хотел узнать?))))\n" +
             "/usd - курс доллара\n" +
             "/eur - курс евро\n" +

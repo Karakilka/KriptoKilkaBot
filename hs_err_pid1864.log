@@ -18,7 +18,7 @@
 #     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (os_windows.cpp:3753), pid=7912, tid=3724
+#  Out of Memory Error (os_windows.cpp:3753), pid=1864, tid=10468
 #
 # JRE version:  (17.0.4.1+7) (build )
 # Java VM: OpenJDK 64-Bit Server VM (17.0.4.1+7-b469.62, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
@@ -30,13 +30,13 @@
 Command Line: git4idea.http.GitAskPassApp Username for 'https://github.com': 
 
 Host: Intel(R) Pentium(R) CPU 3825U @ 1.90GHz, 4 cores, 7G,  Windows 7 , 64 bit Build 7601 (6.1.7601.24565)
-Time: Sat Dec 17 01:10:24 2022 Романское время (зима) elapsed time: 0.017329 seconds (0d 0h 0m 0s)
+Time: Sat Dec 10 08:28:32 2022 Романское время (зима) elapsed time: 0.039656 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x0000000000492400):  JavaThread "Unknown thread" [_thread_in_vm, id=3724, stack(0x00000000021c0000,0x00000000022c0000)]
+Current thread (0x0000000000572400):  JavaThread "Unknown thread" [_thread_in_vm, id=10468, stack(0x00000000022c0000,0x00000000023c0000)]
 
-Stack: [0x00000000021c0000,0x00000000022c0000]
+Stack: [0x00000000022c0000,0x00000000023c0000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x68356a]
 V  [jvm.dll+0x83fab4]
@@ -65,22 +65,22 @@ C  [ntdll.dll+0x52b1d]
 ---------------  P R O C E S S  ---------------
 
 Threads class SMR info:
-_java_thread_list=0x000007feee0a7f58, length=0, elements={
+_java_thread_list=0x000007fef0e57f58, length=0, elements={
 }
 
 Java Threads: ( => current thread )
 
 Other Threads:
-  0x00000000004f5d90 GCTaskThread "GC Thread#0" [stack: 0x000000001a3d0000,0x000000001a4d0000] [id=9056]
-  0x000000001a1f7f80 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000001a590000,0x000000001a690000] [id=4348]
-  0x000000001a1f91b0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000001a870000,0x000000001a970000] [id=3776]
+  0x00000000005d5d90 GCTaskThread "GC Thread#0" [stack: 0x000000001a040000,0x000000001a140000] [id=10800]
+  0x000000001a147f80 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000001a2a0000,0x000000001a3a0000] [id=11056]
+  0x00000000005dfac0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000001a4c0000,0x000000001a5c0000] [id=1588]
 
-[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007feed860217]
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fef0610217]
 
 VM state: not at safepoint (not fully initialized)
 
 VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
-[0x000000000048cae0] Heap_lock - owner thread: 0x0000000000492400
+[0x000000000056cae0] Heap_lock - owner thread: 0x0000000000572400
 
 Heap address: 0x0000000081200000, size: 2030 MB, Compressed Oops mode: 32-bit
 
@@ -94,7 +94,7 @@ Heap:
  garbage-first heap   total 0K, used 0K [0x0000000081200000, 0x0000000100000000)
   region size 1024K, 0 young (0K), 0 survivors (0K)
 
-[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007feedc4d1f9]
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fef09fd1f9]
 
 GC Heap History (0 events):
 No events
@@ -115,61 +115,61 @@ VM Operations (0 events):
 No events
 
 Events (1 events):
-Event: 0.010 Loaded shared library C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.dll
+Event: 0.019 Loaded shared library C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.dll
 
 
 Dynamic libraries:
-0x000000013ff70000 - 0x000000013ff7a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.exe
-0x0000000077880000 - 0x0000000077a1f000 	C:\Windows\SYSTEM32\ntdll.dll
-0x0000000077760000 - 0x0000000077880000 	C:\Windows\system32\kernel32.dll
-0x000007fefd660000 - 0x000007fefd6c7000 	C:\Windows\system32\KERNELBASE.dll
-0x000007feebb50000 - 0x000007feebb67000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\jli.dll
-0x000007fefbd70000 - 0x000007fefbf65000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845\COMCTL32.dll
-0x000007fefda60000 - 0x000007fefdaff000 	C:\Windows\system32\msvcrt.dll
-0x000007feff740000 - 0x000007feff7a8000 	C:\Windows\system32\GDI32.dll
-0x0000000077660000 - 0x000000007775b000 	C:\Windows\system32\USER32.dll
-0x000007fefdb20000 - 0x000007fefdb2e000 	C:\Windows\system32\LPK.dll
-0x000007fefe550000 - 0x000007fefe61b000 	C:\Windows\system32\USP10.dll
-0x000007fefd790000 - 0x000007fefd801000 	C:\Windows\system32\SHLWAPI.dll
-0x000007feeb050000 - 0x000007feeb06b000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\VCRUNTIME140.dll
-0x000007feee8b0000 - 0x000007feee8b4000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-runtime-l1-1-0.dll
-0x000007fee9c30000 - 0x000007fee9d25000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\ucrtbase.DLL
-0x000007feee700000 - 0x000007feee703000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-timezone-l1-1-0.dll
-0x000007feee1e0000 - 0x000007feee1e3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-file-l2-1-0.dll
-0x000007feebb40000 - 0x000007feebb43000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-localization-l1-2-0.dll
-0x000007feeb040000 - 0x000007feeb043000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-synch-l1-2-0.dll
-0x000007feeb030000 - 0x000007feeb033000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-processthreads-l1-1-1.dll
-0x000007feeb020000 - 0x000007feeb023000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-file-l1-2-0.dll
-0x000007feeb010000 - 0x000007feeb013000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-heap-l1-1-0.dll
-0x000007fee9c20000 - 0x000007fee9c24000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-string-l1-1-0.dll
-0x000007fee9c10000 - 0x000007fee9c14000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-stdio-l1-1-0.dll
-0x000007fee9c00000 - 0x000007fee9c04000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-convert-l1-1-0.dll
-0x000007fee9bf0000 - 0x000007fee9bf3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-environment-l1-1-0.dll
-0x000007fee9be0000 - 0x000007fee9be3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-filesystem-l1-1-0.dll
-0x000007fee9bd0000 - 0x000007fee9bd5000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-math-l1-1-0.dll
-0x000007fee9bc0000 - 0x000007fee9bc3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-locale-l1-1-0.dll
-0x000007feff7b0000 - 0x000007feff7de000 	C:\Windows\system32\IMM32.DLL
-0x000007fefd8f0000 - 0x000007fefd9fb000 	C:\Windows\system32\MSCTF.dll
-0x0000000073d00000 - 0x0000000073d0c000 	C:\??\C:\Program Files (x86)\360\Total Security\safemon\SafeWrapper.dll
-0x000007fefd810000 - 0x000007fefd8eb000 	C:\Windows\system32\ADVAPI32.dll
-0x000007fefe620000 - 0x000007fefe63f000 	C:\Windows\SYSTEM32\sechost.dll
-0x000007feff860000 - 0x000007feff98c000 	C:\Windows\system32\RPCRT4.dll
-0x000007feecd00000 - 0x000007feecd92000 	C:\Program Files (x86)\360\Total Security\safemon\libzdtp64.dll
-0x000007fefe910000 - 0x000007feff69b000 	C:\Windows\system32\SHELL32.dll
-0x000007fefced0000 - 0x000007fefcedc000 	C:\Windows\system32\VERSION.dll
-0x000007fee9bb0000 - 0x000007fee9bbc000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\vcruntime140_1.dll
-0x000007fee9b20000 - 0x000007fee9bad000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\msvcp140.dll
-0x000007fee9b10000 - 0x000007fee9b13000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-time-l1-1-0.dll
-0x000007fee9b00000 - 0x000007fee9b03000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-utility-l1-1-0.dll
-0x000007feed570000 - 0x000007feee1d9000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\server\jvm.dll
-0x000007fefaee0000 - 0x000007fefaee9000 	C:\Windows\system32\WSOCK32.dll
-0x000007fefe4f0000 - 0x000007fefe53d000 	C:\Windows\system32\WS2_32.dll
-0x000007fefe540000 - 0x000007fefe548000 	C:\Windows\system32\NSI.dll
-0x000007fef6a40000 - 0x000007fef6a7b000 	C:\Windows\system32\WINMM.dll
-0x0000000077a30000 - 0x0000000077a37000 	C:\Windows\system32\PSAPI.DLL
-0x000007fef7360000 - 0x000007fef736a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\jimage.dll
-0x000007fef6850000 - 0x000007fef6975000 	C:\Windows\system32\DBGHELP.DLL
-0x000007fef0980000 - 0x000007fef09a5000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.dll
+0x000000013f1f0000 - 0x000000013f1fa000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.exe
+0x0000000077000000 - 0x000000007719f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076ee0000 - 0x0000000077000000 	C:\Windows\system32\kernel32.dll
+0x000007fefcb70000 - 0x000007fefcbd7000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feec6f0000 - 0x000007feec707000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\jli.dll
+0x000007fefb4f0000 - 0x000007fefb6e5000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845\COMCTL32.dll
+0x000007fefe290000 - 0x000007fefe32f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe600000 - 0x000007fefe668000 	C:\Windows\system32\GDI32.dll
+0x0000000076de0000 - 0x0000000076edb000 	C:\Windows\system32\USER32.dll
+0x000007fefe260000 - 0x000007fefe26e000 	C:\Windows\system32\LPK.dll
+0x000007fefcf10000 - 0x000007fefcfdb000 	C:\Windows\system32\USP10.dll
+0x000007fefe870000 - 0x000007fefe8e1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feeb820000 - 0x000007feeb83b000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\VCRUNTIME140.dll
+0x000007fef6600000 - 0x000007fef6604000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x000007feea200000 - 0x000007feea2f5000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\ucrtbase.DLL
+0x000007fef6480000 - 0x000007fef6483000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-timezone-l1-1-0.dll
+0x000007fef4fc0000 - 0x000007fef4fc3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-file-l2-1-0.dll
+0x000007fef4c90000 - 0x000007fef4c93000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-localization-l1-2-0.dll
+0x000007feec820000 - 0x000007feec823000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-synch-l1-2-0.dll
+0x000007feec430000 - 0x000007feec433000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-processthreads-l1-1-1.dll
+0x000007feeb810000 - 0x000007feeb813000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-core-file-l1-2-0.dll
+0x000007feea1f0000 - 0x000007feea1f3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x000007feea1e0000 - 0x000007feea1e4000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-string-l1-1-0.dll
+0x000007feea1d0000 - 0x000007feea1d4000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x000007feea1c0000 - 0x000007feea1c4000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x000007feea1b0000 - 0x000007feea1b3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x000007feea1a0000 - 0x000007feea1a3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x000007feea190000 - 0x000007feea195000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-math-l1-1-0.dll
+0x000007feea180000 - 0x000007feea183000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x000007fefe760000 - 0x000007fefe78e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefcfe0000 - 0x000007fefd0eb000 	C:\Windows\system32\MSCTF.dll
+0x0000000073480000 - 0x000000007348c000 	C:\??\C:\Program Files (x86)\360\Total Security\safemon\SafeWrapper.dll
+0x000007fefd0f0000 - 0x000007fefd1cb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefe240000 - 0x000007fefe25f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe4d0000 - 0x000007fefe5fc000 	C:\Windows\system32\RPCRT4.dll
+0x000007feeea50000 - 0x000007feeeae2000 	C:\Program Files (x86)\360\Total Security\safemon\libzdtp64.dll
+0x000007fefd1d0000 - 0x000007fefdf5b000 	C:\Windows\system32\SHELL32.dll
+0x000007fefc630000 - 0x000007fefc63c000 	C:\Windows\system32\VERSION.dll
+0x000007feea170000 - 0x000007feea17c000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\vcruntime140_1.dll
+0x000007feea0e0000 - 0x000007feea16d000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\msvcp140.dll
+0x000007feea0d0000 - 0x000007feea0d3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-time-l1-1-0.dll
+0x000007feea0c0000 - 0x000007feea0c3000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x000007fef0320000 - 0x000007fef0f89000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\server\jvm.dll
+0x000007fefa380000 - 0x000007fefa389000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefe710000 - 0x000007fefe75d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe4c0000 - 0x000007fefe4c8000 	C:\Windows\system32\NSI.dll
+0x000007fef6390000 - 0x000007fef63cb000 	C:\Windows\system32\WINMM.dll
+0x00000000771b0000 - 0x00000000771b7000 	C:\Windows\system32\PSAPI.DLL
+0x000007fef6b10000 - 0x000007fef6b1a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\jimage.dll
+0x000007fef5c00000 - 0x000007fef5d25000 	C:\Windows\system32\DBGHELP.DLL
+0x000007fef02f0000 - 0x000007fef0315000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\java.dll
 
 dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
 symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845;C:\??\C:\Program Files (x86)\360\Total Security\safemon;C:\Program Files (x86)\360\Total Security\safemon;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\jbr\bin\server
@@ -224,12 +224,12 @@ TEMP=C:\Users\User\AppData\Local\Temp
 
 OS:
  Windows 7 , 64 bit Build 7601 (6.1.7601.24565)
-OS uptime: 0 days 0:50 hours
+OS uptime: 0 days 2:10 hours
 
 CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, erms, clmul, clflush
 
-Memory: 4k page, system-wide physical 8112M (529M free)
-TotalPageFile size 10158M (AvailPageFile size 73M)
+Memory: 4k page, system-wide physical 8112M (943M free)
+TotalPageFile size 10158M (AvailPageFile size 39M)
 current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
 current process commit charge ("private bytes"): 58M, peak: 185M
 
